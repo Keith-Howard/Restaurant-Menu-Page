@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Menu Page</title>
+	<link rel="stylesheet" href="styles.css">
+	<script>
+		function ready() {
+			let foods = [["Buttermilk Pancakes", "$15.99", "Stack of pancakes and syrup", "images/pancakes.jpeg", "breakfast"],
+						["Eggs Benedict", "$16.99", "Poached egg, english muffin and ham", "images/eggsBenedict.jpeg", "breakfast"],
+						["Godzilla Milkshake", "$6.99", "Vanilla, Strawbery or Chocolate", "images/milkshake.jpeg", "shakes"], 
+						["Chicken Caesar Salad", "$15.99", "Large salad with chicken", "images/caesarsalad.jpeg", "lunch"],
+						["Turkey Club", "$15.99", "Turkey, lettuce, mayo, avocado and bacon on rye bread", "images/turkeyclub.jpeg", "lunch"],
+						["Hamburger", "$18.99", "Two patties and cheese", "images/hamburger.jpeg", "dinner"],
+						["Steak Dinner", "$25.99", "16 oz ribeye cooked to your liking", "images/steak.jpeg", "dinner"]];
+			
+			window.sectionCenter = document.querySelector(".section-center");
+			window.btnContainer = document.querySelector(".btn-container");
+			window.allMenuItems = foods.map(createFoodArray);
+			displayMenuItems(allMenuItems);
+			foodCategories = getFoodCategories(allMenuItems);
+			createButtons(foodCategories);
+		}
+		
+		window.addEventListener('DOMContentLoaded', ready);
+	</script>
+	<script src="newmain.js"></script>
+</head>
+<body>
+	<section class="menu">
+		<div class="title">
+			<h1>Our Menu</h1>
+			<div class="underline"></div>
+		</div>
+		<div class="btn-container">
+			<!-- <button type="button" class="filter-btn" data-id="all">all</button> -->
+		</div>
+		<div class="section-center"></div>
+	</section>
+</body>
+</html>
+
