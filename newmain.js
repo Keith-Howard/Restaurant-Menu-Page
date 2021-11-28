@@ -9,7 +9,7 @@ class MenuItem {
 }
 
 function getFoodCategories(foods) {
-	var foodCategories = ["all"];
+	const foodCategories = ["all"];
 	foods.forEach(foodItem => {
 		if (foodCategories.indexOf(foodItem.category) == -1) {
 			foodCategories.push(foodItem.category);
@@ -27,20 +27,20 @@ function getFoodCategories(foods) {
 }	 */
 
 function createButtons(categories) {
-    var htmlButtonString= ''; 
+    let htmlButtonString= ''; 
 	categories.forEach(category => {
 		htmlButtonString = htmlButtonString + '<button type="button" class="filter-btn" data-id="' + category + '">' + category + '</button>';
 	});
 	btnContainer.innerHTML = htmlButtonString;
     
-	var filterBtns = document.querySelectorAll('.filter-btn');
+	let filterBtns = document.querySelectorAll('.filter-btn');
 	filterBtns.forEach(button => {
 		button.addEventListener('click', function (event) {
-			var category = event.currentTarget.dataset.id;
+			const category = event.currentTarget.dataset.id;
 			if (category == 'all') {
 				displayMenuItems(allMenuItems);
 			} else {
-				let filteredItems = allMenuItems.filter(function(item) {
+				const filteredItems = allMenuItems.filter(function(item) {
 					if (item.category == category) {
 						return item;
 					}
@@ -57,7 +57,7 @@ function createFoodArray(foods) {
 }
 
 function displayMenuItems(menuItems) {
-	var displayMenu = '';
+	let displayMenu = '';
 	menuItems.forEach(item => { 
 		displayMenu = displayMenu + 
 		'<article class="menu-item">' +
